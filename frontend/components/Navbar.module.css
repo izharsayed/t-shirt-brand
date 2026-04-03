@@ -1,0 +1,129 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  transition: background 0.3s, border-bottom 0.3s, padding 0.3s;
+  border-bottom: 1px solid transparent;
+}
+.nav.scrolled {
+  background: rgba(10,10,10,0.95);
+  border-bottom: 1px solid rgba(245,240,234,0.08);
+  padding: 14px 0;
+  backdrop-filter: blur(12px);
+}
+.inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #F5F0EA;
+}
+.links {
+  display: flex;
+  gap: 36px;
+}
+.link {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,240,234,0.7);
+  transition: color 0.15s;
+}
+.link:hover { color: #F5F0EA; }
+.cartBtn {
+  position: relative;
+  color: #F5F0EA;
+  display: flex;
+  align-items: center;
+}
+.badge {
+  position: absolute;
+  top: -7px; right: -8px;
+  background: #E8FF00;
+  color: #0A0A0A;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hamburger {
+  display: none;
+  color: #F5F0EA;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Drawer */
+.drawer {
+  position: fixed;
+  top: 0; left: 0;
+  height: 100vh;
+  width: 300px;
+  background: #0A0A0A;
+  z-index: 200;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  padding: 60px 32px;
+  border-right: 1px solid rgba(245,240,234,0.08);
+  display: flex;
+  flex-direction: column;
+}
+.drawerOpen { transform: translateX(0); }
+.closeBtn {
+  position: absolute;
+  top: 20px; right: 20px;
+  color: #F5F0EA;
+  background: none; border: none; cursor: pointer;
+}
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 20px;
+}
+.drawerNav a {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #F5F0EA;
+  transition: color 0.15s;
+}
+.drawerNav a:hover { color: #E8FF00; }
+.drawerTagline {
+  margin-top: auto;
+  font-size: 12px;
+  color: rgba(245,240,234,0.35);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 150;
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 768px) {
+  .links { display: none; }
+  .hamburger { display: flex; }
+  .inner { padding: 0 20px; }
+}

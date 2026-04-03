@@ -1,0 +1,203 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Izhar Sayed",
+      "email": "izharsayed31@gmail.com",
+      "password_hash": "$2a$10$zIcXcB1ZrMev55EegCbA7u0wd8mrIYFqItEvpBLfCosIXsqJBtP2q",
+      "created_at": "2026-04-02T19:10:24.352Z"
+    },
+    {
+      "id": 2,
+      "name": "IzharSayed",
+      "email": "izharsayed@gmail.com",
+      "password_hash": "$2a$10$TjX3/U3yja/.i5SpaVzjtu40Xfv1M4q3CHVM3mICpXZhbPeSGuNRS",
+      "created_at": "2026-04-03T05:25:06.907Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "SABR HEAVYWEIGHT TEE",
+      "description": "Patience and endurance. Dark charcoal cotton featuring subtle monochrome Persian rug patterns and modern Arabic calligraphy on the chest.",
+      "price": 1899,
+      "category": "oversized",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "/products/sabr.png"
+      ],
+      "stock": 80,
+      "created_at": "2026-04-02T18:46:39.097Z"
+    },
+    {
+      "id": 2,
+      "name": "DESERT WARRIOR GRAPHIC",
+      "description": "A moody, cinematic homage to historical warriors. High contrast ethereal aura print on pure black 240gsm cotton.",
+      "price": 2199,
+      "category": "graphic",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "/products/qadr_warrior.png"
+      ],
+      "stock": 60,
+      "created_at": "2026-04-02T18:46:39.097Z"
+    },
+    {
+      "id": 3,
+      "name": "YOU VS YOU VINTAGE WASH",
+      "description": "Discipline graphic mixing athletic silhouettes and Islamic geometric patterns. Muted cold tones on vintage grey.",
+      "price": 1999,
+      "category": "graphic",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "/products/you_vs_you.png"
+      ],
+      "stock": 45,
+      "created_at": "2026-04-02T18:46:39.097Z"
+    },
+    {
+      "id": 4,
+      "name": "QADR LOGO TEE",
+      "description": "Minimal brand typography. Chest print on 200gsm combed cotton. Destiny mapped out. Unisex fit.",
+      "price": 1299,
+      "category": "essential",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "/products/qadr_logo.png"
+      ],
+      "stock": 100,
+      "created_at": "2026-04-02T18:46:39.097Z"
+    },
+    {
+      "id": 5,
+      "name": "UMAR R.A. TRIBUTE HOODIE",
+      "description": "Desert silhouettes and bold golden typography over premium black fleece. Designed for winter drops.",
+      "price": 3499,
+      "category": "outerwear",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "/products/umar_hoodie.png"
+      ],
+      "stock": 40,
+      "created_at": "2026-04-02T18:46:39.097Z"
+    },
+    {
+      "id": 6,
+      "name": "PERSIAN WEAVE LONG SLEEVE",
+      "description": "Intricate tapestry artwork fused with dark grunge aesthetics. Printed sleeves and back.",
+      "price": 1699,
+      "category": "graphic",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "/products/persian_ls.png"
+      ],
+      "stock": 90,
+      "created_at": "2026-04-02T18:46:39.097Z"
+    },
+    {
+      "id": 7,
+      "name": "TAWAKKUL ESSENTIAL TEE",
+      "description": "Trust the process. Drop shoulder relaxed fit with minimalist white typographic hit.",
+      "price": 1499,
+      "category": "essential",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "/products/tawakkul.png"
+      ],
+      "stock": 30,
+      "created_at": "2026-04-02T18:46:39.097Z"
+    },
+    {
+      "id": 8,
+      "name": "MIDNIGHT MOSQUE TEE",
+      "description": "Architectural streetwear. Dark monochromatic print of classic domes. Boxy crop cut.",
+      "price": 1799,
+      "category": "graphic",
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "/products/midnight_mosque.png"
+      ],
+      "stock": 70,
+      "created_at": "2026-04-02T18:46:39.097Z"
+    }
+  ],
+  "cart_items": [],
+  "orders": [
+    {
+      "id": 1,
+      "name": "Izhar Sayed",
+      "email": "izharsayed31@gmail.com",
+      "phone": "0935 947 3030",
+      "address": "Plot no 112 CIV HOUSING society Mukundanagar Ahmednagar, 414001",
+      "items": [
+        {
+          "id": 8,
+          "name": "MIDNIGHT MOSQUE TEE",
+          "price": 1799,
+          "size": "M",
+          "quantity": 1
+        }
+      ],
+      "subtotal": 1799,
+      "total": 1898,
+      "payment_method": "UPI",
+      "status": "pending",
+      "created_at": "2026-04-02T18:53:35.067Z"
+    }
+  ],
+  "_seq": {
+    "users": 2,
+    "products": 8,
+    "cart_items": 1,
+    "orders": 1
+  }
+}

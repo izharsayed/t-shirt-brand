@@ -1,0 +1,467 @@
+.page {
+  padding: 120px 0 80px;
+  min-height: 100vh;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+@media (min-width: 900px) {
+  .layout {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: flex-start;
+  }
+}
+
+/* Image Panel */
+.imgPanel {
+  width: 100%;
+}
+.imageGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.img, .imgDetail {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  background: #111;
+  display: block;
+}
+.imgDetail {
+  /* Just for show if there's only 1 image */
+  object-position: bottom;
+  filter: contrast(1.1);
+}
+.imgPlaceholder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(60px, 8vw, 120px);
+  color: #1a1a1a;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+
+/* Info Panel (Sticky on Desktop) */
+.infoWrapper {
+  position: relative;
+}
+@media (min-width: 900px) {
+  .infoWrapper {
+    position: sticky;
+    top: 100px;
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding-right: 20px;
+  }
+  .infoWrapper::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(245, 240, 234, 0.5);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  background-color: #E8FF00;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #E8FF00;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { opacity: 1; box-shadow: 0 0 8px #E8FF00; }
+  50% { opacity: 0.3; box-shadow: 0 0 2px #E8FF00; }
+  100% { opacity: 1; box-shadow: 0 0 8px #E8FF00; }
+}
+
+.name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #F5F0EA;
+  margin-bottom: 16px;
+}
+
+.rating {
+  font-size: 14px;
+  color: #E8FF00;
+  margin-bottom: 24px;
+  display: inline-block;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.rating:hover { opacity: 0.8; }
+.rating span {
+  color: rgba(245, 240, 234, 0.4);
+  font-size: 12px;
+  margin-left: 8px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Pricing Row */
+.priceRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(245, 240, 234, 0.1);
+}
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  color: #F5F0EA;
+  line-height: 1;
+}
+.comparePrice {
+  font-size: 18px;
+  color: rgba(245, 240, 234, 0.3);
+  text-decoration: line-through;
+  line-height: 1;
+}
+.saveBadge {
+  background: #E8FF00;
+  color: #0A0A0A;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  letter-spacing: 0.1em;
+  transform: translateY(-2px);
+}
+
+/* Sizing */
+.sizeSection {
+  margin-bottom: 40px;
+}
+.sizeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: rgba(245, 240, 234, 0.6);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.sizeGuide {
+  color: rgba(245, 240, 234, 0.4);
+  background: none; border: none; cursor: pointer;
+  font-family: inherit; font-size: inherit; letter-spacing: inherit; text-transform: inherit;
+  transition: color 0.2s;
+}
+.sizeGuide:hover { color: #F5F0EA; }
+
+.urgencyBadge {
+  background: rgba(255, 60, 60, 0.1);
+  border: 1px solid rgba(255, 60, 60, 0.3);
+  color: #ff6b6b;
+  font-size: 12px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  font-family: 'Inter', sans-serif;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.sizeChip {
+  flex: 1;
+  min-width: 60px;
+  padding: 16px 0;
+  background: transparent;
+  border: 1px solid rgba(245, 240, 234, 0.2);
+  color: #F5F0EA;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.sizeChip:hover { border-color: rgba(245, 240, 234, 0.5); }
+.sizeActive {
+  background: #F5F0EA;
+  color: #0A0A0A;
+  border-color: #F5F0EA;
+}
+
+.sizeHint {
+  font-size: 12px;
+  color: rgba(245, 240, 234, 0.4);
+  margin-top: 12px;
+}
+.sizeHintSuccess {
+  font-size: 12px;
+  color: #E8FF00;
+  margin-top: 12px;
+}
+
+/* Action Buttons */
+.actionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.addBtn, .buyNowBtn {
+  width: 100%;
+  padding: 20px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.addBtn {
+  background: transparent;
+  border: 1px solid rgba(245, 240, 234, 0.8);
+  color: #F5F0EA;
+}
+.addBtn:hover {
+  background: rgba(245, 240, 234, 0.1);
+}
+.addBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.buyNowBtn {
+  background: #E8FF00;
+  color: #0A0A0A;
+}
+.buyNowBtn:hover {
+  background: #d4e800;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 255, 0, 0.15);
+}
+.buyNowBtn:active { transform: translateY(0); }
+.buyNowBtn:disabled {
+  background: #444; 
+  color: #888;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+
+.microCopy {
+  font-size: 11px;
+  font-style: italic;
+  color: rgba(245, 240, 234, 0.5);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Trust Badges */
+.trustBadges {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  background: rgba(20,20,20,0.5);
+  border: 1px solid rgba(245, 240, 234, 0.05);
+  margin-bottom: 40px;
+}
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: rgba(245, 240, 234, 0.7);
+  letter-spacing: 0.05em;
+}
+.trustIcon {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* Accordion */
+.accordion {
+  border-top: 1px solid rgba(245, 240, 234, 0.1);
+  border-bottom: 1px solid rgba(245, 240, 234, 0.1);
+}
+.accordionBtn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  color: #F5F0EA;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.accIcon { transition: transform 0.3s; }
+.accIconOpen { transform: rotate(45deg); }
+
+.accordionBody {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+}
+.accordionBodyOpen {
+  max-height: 500px; /* arbitrary large value */
+  padding-bottom: 24px;
+}
+.descText {
+  color: rgba(245, 240, 234, 0.7);
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.featureList li {
+  position: relative;
+  padding-left: 16px;
+  color: rgba(245, 240, 234, 0.6);
+  font-size: 13px;
+}
+.featureList li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #E8FF00;
+}
+
+/* Loading State */
+.loading {
+  padding: 120px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+@media (min-width: 900px) {
+  .loading { grid-template-columns: 1.2fr 1fr; gap: 80px; }
+}
+.imgSkel {
+  width: 100%; aspect-ratio: 4/5;
+  background: #111;
+  animation: pulseBg 1.5s infinite;
+}
+.infoSkel {
+  width: 100%; height: 400px;
+  background: #111;
+  animation: pulseBg 1.5s infinite;
+}
+@keyframes pulseBg {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+
+/* Sticky Mobile CTA Bar */
+.stickyBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(245, 240, 234, 0.1);
+  padding: 16px 20px;
+  z-index: 90;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 -10px 40px rgba(0,0,0,0.5);
+}
+.stickyBarVisible {
+  transform: translateY(0);
+}
+.stickyInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.stickyInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.stickyName {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #F5F0EA;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.stickyPrice {
+  font-size: 12px;
+  color: rgba(245, 240, 234, 0.5);
+}
+.stickyBtn {
+  background: #E8FF00;
+  color: #0A0A0A;
+  border: none;
+  padding: 14px 24px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.stickyBtnDisabled {
+  background: #333;
+  color: #888;
+  cursor: not-allowed;
+}
+
+@media (min-width: 900px) {
+  /* On very large screens where everything is visible, we might not need the sticky bar as much, but it's good UX. Make it smaller */
+  .stickyBar { padding: 12px 40px; }
+}
