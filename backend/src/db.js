@@ -11,7 +11,17 @@ function loadDB() {
     fs.writeFileSync(DB_FILE, JSON.stringify(init, null, 2));
     return init;
   }
-  return JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
+  const data = JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
+  if (!data.settings) {
+    data.settings = {
+      heroText1: 'WEAR LESS.',
+      heroText2: 'SAY MORE.',
+      heroCta: 'ENTER THE ARCHIVE →',
+      marqueeText: 'SS26 ARCHIVE LIVE ✦ LIMITED RUNS ONLY ✦ NO RESTOCKS ✦ INTERNATIONAL SHIPPING'
+    };
+    saveDB(data);
+  }
+  return data;
 }
 
 function saveDB(data) {
@@ -49,6 +59,17 @@ seedProducts(db);
 
 // Simple query helpers
 const DB = {
+  // Settings
+  getSettings() {
+    return loadDB().settings;
+  },
+  updateSettings(updates) {
+    const data = loadDB();
+    data.settings = { ...data.settings, ...updates };
+    saveDB(data);
+    return data.settings;
+  },
+
   // Products
   getAllProducts(filters = {}) {
     let data = loadDB();

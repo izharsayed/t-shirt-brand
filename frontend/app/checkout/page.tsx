@@ -122,7 +122,7 @@ export default function CheckoutPage() {
             ))}
             <div className={styles.divider} />
             <div className={styles.summaryRow}><span>Subtotal</span><span>₹{subtotal.toLocaleString('en-IN')}</span></div>
-            <div className={styles.summaryRow}><span>Shipping</span><span style={{ color: shipping === 0 ? '#E8FF00' : '#F5F0EA' }}>{shipping === 0 ? 'FREE' : `₹${shipping}`}</span></div>
+            <div className={styles.summaryRow}><span>Shipping</span><span style={{ color: shipping === 0 ? 'var(--lime)' : 'var(--text)' }}>{shipping === 0 ? 'FREE' : `₹${shipping}`}</span></div>
             <div className={`${styles.summaryRow} ${styles.totalRow}`}><span>TOTAL</span><span>₹{total.toLocaleString('en-IN')}</span></div>
           </div>
         </div>

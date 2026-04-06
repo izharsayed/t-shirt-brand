@@ -1,8 +1,9 @@
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api';
 
 async function apiFetch(path: string, options?: RequestInit) {
+  const isFormData = options?.body instanceof FormData;
   const res = await fetch(`${API_BASE}${path}`, {
-    headers: { 'Content-Type': 'application/json', ...options?.headers },
+    headers: { ...(isFormData ? {} : { 'Content-Type': 'application/json' }), ...options?.headers },
     ...options,
   });
   if (!res.ok) {
@@ -56,3 +57,21 @@ export const getAdminUsers = () => apiFetch('/admin/users', { headers: getAuthHe
 export const updateOrderStatusAdmin = (id: number, status: string) => 
   apiFetch(`/admin/orders/${id}/status`, { method: 'PATCH', body: JSON.stringify({ status }), headers: getAuthHeaders() });
 
+export const createProductAdmin = (data: any) => 
+  apiFetch('/products', { method: 'POST', body: JSON.stringify(data), headers: getAuthHeaders() });
+
+export const updateProductAdmin = (id: number | string, data: any) => 
+  apiFetch(`/products/${id}`, { method: 'PUT', body: JSON.stringify(data), headers: getAuthHeaders() });
+
+export const deleteProductAdmin = (id: number | string) => 
+  apiFetch(`/products/${id}`, { method: 'DELETE', headers: getAuthHeaders() });
+
+export const uploadImageAdmin = (file: File) => {
+  const formData = new FormData();
+  formData.append('image', file);
+  return apiFetch('/upload', { method: 'POST', body: formData, headers: getAuthHeaders() });
+};
+export const getSettings = () => apiFetch('/settings');
+
+export const updateSettingsAdmin = (data: any) => 
+  apiFetch('/settings', { method: 'PUT', body: JSON.stringify(data), headers: getAuthHeaders() });

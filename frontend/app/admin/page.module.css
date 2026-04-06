@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0A0A0A;
+  background: var(--bg);
 }
 .spinner {
   color: #E8FF00;
@@ -17,7 +17,7 @@
 .page {
   padding: 120px 20px 80px;
   min-height: 100vh;
-  background: #050505;
+  background: var(--bg);
 }
 
 .container {
@@ -27,7 +27,7 @@
 
 .header {
   margin-bottom: 40px;
-  border-bottom: 1px solid rgba(245, 240, 234, 0.1);
+  border-bottom: 1px solid var(--border);
   padding-bottom: 24px;
 }
 .title {
@@ -35,12 +35,12 @@
   font-size: 32px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #F5F0EA;
+  color: var(--text);
   margin-bottom: 8px;
 }
 .subtitle {
   font-size: 13px;
-  color: rgba(245, 240, 234, 0.5);
+  color: var(--text-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -50,7 +50,7 @@
   display: flex;
   gap: 32px;
   margin-bottom: 40px;
-  border-bottom: 1px solid rgba(245, 240, 234, 0.08);
+  border-bottom: 1px solid var(--border);
 }
 .tab {
   background: none;
@@ -60,13 +60,13 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(245, 240, 234, 0.4);
+  color: var(--text-muted);
   padding: 0 0 16px 0;
   cursor: pointer;
   position: relative;
   transition: color 0.2s;
 }
-.tab:hover { color: #F5F0EA; }
+.tab:hover { color: var(--text); }
 .tabActive { color: #E8FF00; }
 .tabActive::after {
   content: '';
@@ -87,7 +87,7 @@
 }
 .statCard {
   background: rgba(20, 20, 20, 0.5);
-  border: 1px solid rgba(245, 240, 234, 0.05);
+  border: 1px solid var(--border);
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -104,7 +104,7 @@
 }
 .statLabel {
   font-size: 11px;
-  color: rgba(245, 240, 234, 0.5);
+  color: var(--text-muted);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -116,20 +116,20 @@
   font-family: 'Space Grotesk', sans-serif;
   font-size: 32px;
   font-weight: 700;
-  color: #F5F0EA;
+  color: var(--text);
   margin: 0;
 }
 
 /* Quick Actions */
 .quickActions {
   background: rgba(20, 20, 20, 0.3);
-  border: 1px solid rgba(245, 240, 234, 0.05);
+  border: 1px solid var(--border);
   padding: 32px;
 }
 .sectionTitle {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 16px;
-  color: #F5F0EA;
+  color: var(--text);
   margin-bottom: 24px;
 }
 .actionGrid {
@@ -156,8 +156,8 @@
 }
 .actionBtnSecondary {
   background: transparent;
-  border: 1px solid rgba(245, 240, 234, 0.2);
-  color: #F5F0EA;
+  border: 1px solid var(--border);
+  color: var(--text);
 }
 .actionBtnSecondary:hover {
   background: rgba(245, 240, 234, 0.05);
@@ -166,13 +166,13 @@
 /* Tables */
 .panel {
   background: rgba(20, 20, 20, 0.5);
-  border: 1px solid rgba(245, 240, 234, 0.05);
+  border: 1px solid var(--border);
   padding: 32px;
 }
 .panelTitle {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 18px;
-  color: #F5F0EA;
+  color: var(--text);
   margin-bottom: 24px;
 }
 
@@ -186,17 +186,17 @@
 }
 .table th {
   font-size: 10px;
-  color: rgba(245, 240, 234, 0.4);
+  color: var(--text-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 16px 24px;
-  border-bottom: 1px solid rgba(245, 240, 234, 0.08);
+  border-bottom: 1px solid var(--border);
 }
 .table td {
   padding: 20px 24px;
   font-size: 13px;
-  color: rgba(245, 240, 234, 0.8);
-  border-bottom: 1px solid rgba(245, 240, 234, 0.04);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
   vertical-align: middle;
 }
 .table tr:hover td {
@@ -205,7 +205,7 @@
 .emptyRow {
   text-align: center;
   padding: 40px !important;
-  color: rgba(245, 240, 234, 0.3) !important;
+  color: var(--text-muted) !important;
 }
 
 .customerInfo {
@@ -215,7 +215,7 @@
 }
 .customerEmail {
   font-size: 11px;
-  color: rgba(245, 240, 234, 0.4);
+  color: var(--text-muted);
 }
 
 .statusBadge {
@@ -233,9 +233,9 @@
 .statuscancelled { background: rgba(255, 60, 60, 0.1); color: #ff3c3c; border: 1px solid rgba(255, 60, 60, 0.2); }
 
 .statusSelect {
-  background: #0A0A0A;
-  color: #F5F0EA;
-  border: 1px solid rgba(245, 240, 234, 0.2);
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
   padding: 8px 12px;
   font-family: 'Inter', sans-serif;
   font-size: 12px;
@@ -244,8 +244,84 @@
   transition: border-color 0.2s;
 }
 .statusSelect:hover {
-  border-color: rgba(245, 240, 234, 0.5);
+  border-color: var(--text-muted);
 }
 .statusSelect:focus {
   border-color: #E8FF00;
+}
+
+/* Product Form Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modalContent {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 40px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.formGroup {
+  margin-bottom: 24px;
+}
+.formGroup label {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.formInput {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.formInput:focus {
+  border-color: #E8FF00;
+}
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 32px;
+}
+.dangerBtn {
+  padding: 8px 16px;
+  background: rgba(255, 60, 60, 0.1);
+  color: #ff3c3c;
+  border: 1px solid rgba(255, 60, 60, 0.2);
+  cursor: pointer;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.editBtn {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.productImageThumb {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 2px;
 }

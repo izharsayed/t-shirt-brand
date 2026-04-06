@@ -4,9 +4,9 @@
 .heading {
   font-size: clamp(36px, 6vw, 64px); font-weight: 700;
   letter-spacing: -0.04em; text-transform: uppercase;
-  color: #F5F0EA; margin-bottom: 12px;
+  color: var(--text); margin-bottom: 12px;
 }
 .subheading { font-size: 14px; color: #E8FF00; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px; }
 .orderId { font-size: 12px; letter-spacing: 0.14em; color: rgba(245,240,234,0.35); margin-bottom: 20px; }
-.message { font-size: 15px; color: rgba(245,240,234,0.5); line-height: 1.7; margin-bottom: 48px; }
+.message { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 48px; }
 .actions { display: flex; justify-content: center; }

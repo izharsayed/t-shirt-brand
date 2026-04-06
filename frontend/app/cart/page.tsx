@@ -89,7 +89,7 @@ export default function CartPage() {
               </div>
               <div className={styles.summaryRow}>
                 <span>Shipping</span>
-                <span style={{ color: shipping === 0 ? '#E8FF00' : '#F5F0EA' }}>
+                <span style={{ color: shipping === 0 ? 'var(--lime)' : 'var(--text)' }}>
                   {shipping === 0 ? 'FREE' : `₹${shipping}`}
                 </span>
               </div>

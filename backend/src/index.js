@@ -14,6 +14,11 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/cart', require('./routes/cart'));
 app.use('/api/orders', require('./routes/orders'));
 app.use('/api/admin', require('./routes/admin'));
+app.use('/api/upload', require('./routes/upload'));
+app.use('/api/settings', require('./routes/settings'));
+
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', brand: 'Qadr Studio' }));
 

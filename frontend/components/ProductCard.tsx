@@ -12,8 +12,8 @@ interface Product {
 export default function ProductCard({ product }: { product: Product }) {
   const placeholderColors: Record<string, string> = {
     oversized: '#1A1A1A',
-    graphic: '#141414',
-    essential: '#111111',
+    graphic: 'var(--surface-high)',
+    essential: 'var(--surfaceHighest)',
     all: '#1A1A1A',
   };
   const bg = placeholderColors[product.category] || '#1A1A1A';

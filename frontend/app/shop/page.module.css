@@ -4,7 +4,7 @@
   font-weight: 700;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #F5F0EA;
+  color: var(--text);
   margin-bottom: 48px;
 }
 .toolbar {
@@ -22,7 +22,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(245,240,234,0.4);
+  color: var(--text-muted);
   background: none;
   border: none;
   border-bottom: 2px solid transparent;
@@ -30,7 +30,7 @@
   cursor: pointer;
   transition: color 0.15s, border-color 0.15s;
 }
-.filter.active { color: #F5F0EA; border-bottom-color: #E8FF00; }
+.filter.active { color: var(--text); border-bottom-color: #E8FF00; }
 .filter:hover:not(.active) { color: rgba(245,240,234,0.7); }
 .sortGroup { display: flex; gap: 8px; }
 .sortBtn {
@@ -39,18 +39,18 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(245,240,234,0.4);
+  color: var(--text-muted);
   background: none;
   border: 1px solid transparent;
   padding: 6px 14px;
   cursor: pointer;
   transition: all 0.15s;
 }
-.sortBtn.sortActive { color: #F5F0EA; border-color: rgba(245,240,234,0.2); }
+.sortBtn.sortActive { color: var(--text); border-color: rgba(245,240,234,0.2); }
 .count {
   font-size: 11px;
   letter-spacing: 0.1em;
-  color: rgba(245,240,234,0.3);
+  color: var(--text-muted);
   margin-bottom: 32px;
 }
 .grid {
@@ -65,7 +65,7 @@
 }
 .skeleton {
   aspect-ratio: 3/4;
-  background: #141414;
+  background: var(--surface-high);
   animation: shimmer 1.4s ease infinite;
 }
 @keyframes shimmer {

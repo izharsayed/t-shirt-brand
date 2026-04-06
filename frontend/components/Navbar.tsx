@@ -1,7 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ShoppingBag, Menu, X, User, LogOut } from 'lucide-react';
+import { ShoppingBag, Menu, X, User, LogOut, Sun, Moon } from 'lucide-react';
+import { useTheme } from 'next-themes';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -10,6 +11,12 @@ export default function Navbar() {
   const [cartCount, setCartCount] = useState(0);
   const [user, setUser] = useState<{ name: string; email: string } | null>(null);
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -64,6 +71,18 @@ export default function Navbar() {
             <Link href="/about" className={styles.link}>About</Link>
           </div>
           <div className={styles.actions}>
+            {/* Theme Toggle */}
+            {mounted && (
+              <button 
+                className={styles.authLink}
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                aria-label="Toggle Theme"
+                style={{ background: 'transparent', border: 'none', color: 'inherit', cursor: 'pointer', display: 'flex' }}
+              >
+                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+            )}
+            
             {/* User Auth */}
             {user ? (
               <div className={styles.userArea}>

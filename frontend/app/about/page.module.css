@@ -7,7 +7,7 @@
 .heading {
   font-size: clamp(36px, 6vw, 80px); font-weight: 700;
   letter-spacing: -0.04em; text-transform: uppercase;
-  color: #F5F0EA; line-height: 1.0;
+  color: var(--text); line-height: 1.0;
 }
 .body { max-width: 720px; margin-bottom: 80px; }
 .text { display: flex; flex-direction: column; gap: 24px; }
@@ -15,17 +15,17 @@
 .signature {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 16px; font-weight: 600;
-  color: rgba(245,240,234,0.4); margin-top: 12px !important;
+  color: var(--text-muted); margin-top: 12px !important;
 }
 .pillars {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 32px; margin-top: 60px; padding-top: 60px;
-  border-top: 1px solid rgba(245,240,234,0.08);
+  border-top: 1px solid var(--border);
 }
 .pillar h3 {
   font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
   color: #E8FF00; margin-bottom: 10px;
 }
-.pillar p { font-size: 14px; color: rgba(245,240,234,0.5); line-height: 1.6; }
-.cta { padding-top: 40px; border-top: 1px solid rgba(245,240,234,0.08); }
+.pillar p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+.cta { padding-top: 40px; border-top: 1px solid var(--border); }
 @media (max-width: 768px) { .pillars { grid-template-columns: 1fr; gap: 24px; } }
